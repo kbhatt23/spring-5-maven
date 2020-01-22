@@ -1,0 +1,28 @@
+Jackosn needs no arg constructor to initialize , it do not uses arg constructor
+jackson uses setter while createing bean from json and use getters while converting bean to json
+
+Exceptin handling is not auto configured in spring
+which means we have to add sample error response bean dn exception handler for this.
+
+In spring boot autoconfiguration provides a default sample error repsonse for every runtime exception thrown in code where
+call is initiated by controller
+
+@exceptionhanlder is situated on the restcontrller where exception is thrown
+@exceptionhanlder do not work outside in a new class
+we cna make it global by creating a new class with annotation @contoleradvice
+We can make a global class with anotaion @controlleradvice and handle all kind of exceptions in one class:	
+				- following single repsoisiblity principle
+
+
+Spring boot provide default exception hadnling and showing default error response and status code for all exceptions
+
+But we can customize it using the above steps,
+Spring basic do not provide such handling and we need to create all classes our own
+In exception handler annotation it can be used locally by controller and other controllers can not use it
+we can create controlelradvice class and add excpetionhandler functions for glocal access to all controllers
+
+With help of conmtroller advice we can trhow exceptions from multiple controller sand still handles that and send proper response to client				
+
+In spring we should use the url as the name of resource in plural and should not add verbs or actions in the url
+Instead actions are defined using the httpmethod
+Resource name or entity name should the the url in plural
