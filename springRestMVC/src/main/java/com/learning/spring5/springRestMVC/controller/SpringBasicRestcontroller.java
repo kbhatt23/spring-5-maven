@@ -9,6 +9,6 @@ public class SpringBasicRestcontroller {
 
 	@RequestMapping("/test")
 	public String test() {
-		return "jai shree ram";
+		return "jai shree sita ram";
 	}
 }
