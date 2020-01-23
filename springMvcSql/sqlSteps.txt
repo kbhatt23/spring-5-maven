@@ -1,0 +1,16 @@
+docker run --detach --env MYSQL_ROOT_PASSWORD=Suarez@23 --env MYSQL_USER=springMvcUser --env MYSQL_PASSWORD=springMvcPassword --env MYSQL_DATABASE=springMvcDb --name mysql --publish 3306:3306 --volume mysql-database-volume:/var/lib/mysql  mysql:5.7
+
+
+to run sql commands using mysql shell
+a. go to C:\Users\kanbhatt1\Documents\kanishk\softwares\mysql-shell-8.0.19-windows-x86-64bit\mysql-shell-8.0.19-windows-x86-64bit\bin
+b. run mysqlsh.exe
+c. \connect springMvcUser@localhost:3306
+d. \sql
+e. use springMvcDb
+
+
+create table test_bean (id integer not null, test_property1 varchar(255), test_property2 varchar(255));
+
+
+INSERT INTO test_bean (id, test_property1, test_property1)
+VALUES (1, 'raghav test1', 'raghav test2');
