@@ -1,0 +1,8 @@
+@repository extends @componet:
+It is used for dap based classes only
+It allows componet scan for dao classes
+- > It also helps in exception handling: it also hanldes jbdc exceptions that are checked 
+							and converts them inot unchked exception and hence try catch is not needed
+
+@repository works only when DAO pattern is implemented
+we should take autorwiing based on qualifier and interface reference only 

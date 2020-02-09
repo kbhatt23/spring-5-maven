@@ -7,17 +7,21 @@ import javax.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.learning.crmSystem.entity.CRMCustomer;
+import com.learning.crmSystem.service.CRMCustomerDAO;
+import com.learning.crmSystem.service.CRMCustomerDAOImpl;
 
 @Controller
 public class TestController {
 
 	@Autowired
-	private SessionFactory sessionFactory;
+	@Qualifier("CRMCustomerDAOImpl")
+	private CRMCustomerDAO service;
 	
 	@RequestMapping("/test")
 	public String test() {
@@ -28,22 +32,8 @@ public class TestController {
 	@RequestMapping("/testHibernate")
 	public String testHibernate() {
 		System.out.println("testHibernate controller called");
-		System.out.println(listACustomer());
+		System.out.println(service.fetchCustomer(10));
 		return "testHibernate";
 	}
 	
-	//we can remove this transaction and test
-	//@Transactional
-	   public CRMCustomer listACustomer() {
-		   Session session = sessionFactory.getCurrentSession();
-		   CRMCustomer customer = null;
-		   try {
-		 
-		   session.beginTransaction();
-		   customer = session.get(CRMCustomer.class, 10);
-		   }finally {
-			session.getTransaction().commit();
-		}
-		   return customer;
-	   }
 }
