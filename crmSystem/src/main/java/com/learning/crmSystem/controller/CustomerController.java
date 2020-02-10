@@ -55,6 +55,8 @@ public class CustomerController {
 		System.out.println(customer);
 		customerService.saveCustomer(customer);
 		//instead of jsp call the url directly
+		//we are using this so that we need not to populate the model again
+		//this handles internally in the get mapping added here
 		return "redirect:/customer/list";
 	}
 	
