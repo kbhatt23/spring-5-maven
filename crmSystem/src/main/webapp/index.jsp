@@ -8,5 +8,9 @@
 </head>
 <body>
 <b>jai shree ram brothers</b>
+
+<br>
+
+Please  <a href="customer/list">click</a> here to view all customers.
 </body>
 </html>

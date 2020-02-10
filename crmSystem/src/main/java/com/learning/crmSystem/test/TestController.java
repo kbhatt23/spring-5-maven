@@ -10,18 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.learning.crmSystem.entity.CRMCustomer;
 import com.learning.crmSystem.service.CRMCustomerDAO;
 import com.learning.crmSystem.service.CRMCustomerDAOImpl;
+import com.learning.crmSystem.service.CRMCustomerService;
+import com.learning.crmSystem.service.CRMCustomerServiceImpl;
 
 @Controller
 public class TestController {
 
 	@Autowired
-	@Qualifier("CRMCustomerDAOImpl")
-	private CRMCustomerDAO service;
+	private CRMCustomerService service;
 	
 	@RequestMapping("/test")
 	public String test() {
@@ -30,10 +32,10 @@ public class TestController {
 	}
 	
 	@RequestMapping("/testHibernate")
-	public String testHibernate() {
-		System.out.println("testHibernate controller called");
-		System.out.println(service.fetchCustomer(10));
-		return "testHibernate";
+	public String testHibernate(Model theModel) {
+
+		theModel.addAttribute("customerList", service.fetchAllCustomers());
+		return "show-customers";
 	}
 	
 }

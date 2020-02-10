@@ -5,4 +5,12 @@ It allows componet scan for dao classes
 							and converts them inot unchked exception and hence try catch is not needed
 
 @repository works only when DAO pattern is implemented
-we should take autorwiing based on qualifier and interface reference only 
+we should take autorwiing based on qualifier and interface reference only
+
+it is always advisable to keep service layer sperate form DAO layer.
+This helps in future when more business logic is needed.
+We can add business logic on service layer instead of dao layer.
+This introduces single responsibility priniciple and hence adds reusability of code.
+
+Also it is better to keep transactions in service layer and remove that from dao.
+Meaning dao class shud use transaction from service layer context. 
