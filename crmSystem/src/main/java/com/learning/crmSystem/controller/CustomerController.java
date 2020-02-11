@@ -44,7 +44,7 @@ public class CustomerController {
 	
 	@GetMapping("/showUpdateCustomer")
 	public String showUpdateCustomer( @RequestParam("customerId") Integer customerId,Model theModel) {
-		
+		//populating the existing data
 		CRMCustomer customer =  customerService.fetchCustomer(customerId);
 		System.out.println("update se phle jai shree ram "+customer);
 		theModel.addAttribute("customerAttribute", customer);
@@ -56,7 +56,7 @@ public class CustomerController {
 		System.out.println("jai shree ram from update cusomer "+customer);
 		
 		//call code to update the customer
-		
+		customerService.updateCustomer(customer);
 		
 		//instead of jsp call the url directly
 				//we are using this so that we need not to populate the model again
@@ -80,6 +80,12 @@ public class CustomerController {
 		//instead of jsp call the url directly
 		//we are using this so that we need not to populate the model again
 		//this handles internally in the get mapping added here
+		return "redirect:/customer/list";
+	}
+	
+	@GetMapping("/deleteCustomer")
+	public String deleteCustomer(@RequestParam("customerId") Integer customerId) {
+		customerService.deleteCustomer(customerId);
 		return "redirect:/customer/list";
 	}
 	

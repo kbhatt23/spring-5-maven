@@ -33,4 +33,10 @@ public class FakeCustomerDAOImpl implements CRMCustomerDAO{
 		
 	}
 
+	@Override
+	public void deleteCustomer(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

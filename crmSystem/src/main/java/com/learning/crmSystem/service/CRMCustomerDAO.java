@@ -14,4 +14,6 @@ public interface CRMCustomerDAO {
 	public void saveCustomer(CRMCustomer customer);
 	
 	public void updateCustomer(CRMCustomer customer);
+	
+	public void deleteCustomer(Integer id);
 }

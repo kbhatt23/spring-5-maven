@@ -30,7 +30,12 @@ jai shree ram from customer list
 						<td> ${tempCustomer.firstName} </td>
 						<td> ${tempCustomer.lastName} </td>
 						<td> ${tempCustomer.email} </td>
-						<td><a href="showUpdateCustomer?customerId=${tempCustomer.id}">Click here to update customer</a></td>
+						<td><a href="showUpdateCustomer?customerId=${tempCustomer.id}">Update</a>
+							|
+							<a href="deleteCustomer?customerId=${tempCustomer.id}" 
+							onclick="return confirm('Are you sure you want to delete this item?');"
+							>Delete</a>
+						</td>
 					</tr>
 				
 				</c:forEach>

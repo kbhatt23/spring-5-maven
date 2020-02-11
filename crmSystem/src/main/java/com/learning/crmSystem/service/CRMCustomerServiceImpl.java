@@ -33,5 +33,18 @@ public class CRMCustomerServiceImpl implements CRMCustomerService{
 		System.out.println("jai shree ganesh saveCustomer ");
 		 daoService.saveCustomer(customer);
 	}
+	@Override
+	@Transactional
+	public void updateCustomer(CRMCustomer customer) {
+		System.out.println("jai shree ganesh updateCustomer ");
+		 daoService.updateCustomer(customer);
+		
+	}
+	@Override
+	@Transactional
+	public void deleteCustomer(Integer id) {
+		System.out.println("jai shree ganesh deletecustomer ");
+		 daoService.deleteCustomer(id);
+	}
 
 }
