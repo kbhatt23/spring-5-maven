@@ -46,5 +46,11 @@ public class CRMCustomerServiceImpl implements CRMCustomerService{
 		System.out.println("jai shree ganesh deletecustomer ");
 		 daoService.deleteCustomer(id);
 	}
+	@Override
+	@Transactional
+	public List<CRMCustomer> searchCustomer(String customerSearchString) {
+		// TODO Auto-generated method stub
+		return daoService.searchCustomer(customerSearchString);
+	}
 
 }

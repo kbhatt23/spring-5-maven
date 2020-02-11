@@ -57,5 +57,26 @@ public class CRMCustomerDAOImpl implements CRMCustomerDAO{
 		session.delete(cusotmer);
 	}
 
+	@Override
+	public List<CRMCustomer> searchCustomer(String customerSearchString) {
+		Session session = sessionFactory.getCurrentSession();
+		System.out.println("calling search customer using transaction with session "+session + " with string "+customerSearchString);
+		
+		Query<CRMCustomer> searchQuery = session.createQuery("from CRMCustomer where lower(firstName) like :parseSearchString"
+				+" or lower(lastName) like :parseSearchString"
+				,CRMCustomer.class);
+		searchQuery.setParameter("parseSearchString", "%"+customerSearchString.toLowerCase()+"%");
+		
+		List<CRMCustomer> searchList = searchQuery.getResultList();
+		if(searchList == null || searchList.size() == 0) {
+			Query<CRMCustomer> searchQueryAll = session.createQuery("from CRMCustomer" 
+					,CRMCustomer.class);
+			return searchQueryAll.getResultList();
+		}else {
+			return searchList;
+		}
+				
+	}
+
 	
 }

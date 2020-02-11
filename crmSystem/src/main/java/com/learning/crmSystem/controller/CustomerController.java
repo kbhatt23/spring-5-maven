@@ -89,6 +89,13 @@ public class CustomerController {
 		return "redirect:/customer/list";
 	}
 	
+	@GetMapping("/search")
+	public String searchCustomer(@RequestParam("searchString") String customerSearchString , Model model) {
+		System.out.println("jia shree ram from customer search "+customerSearchString);
+		model.addAttribute("customerList",customerService.searchCustomer(customerSearchString));
+		return "show-customers";
+	}
+	
 }
 
 

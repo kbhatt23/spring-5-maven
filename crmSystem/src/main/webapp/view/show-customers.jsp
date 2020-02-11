@@ -10,6 +10,18 @@
 <body>
 jai shree ram from customer list
 
+<div id="search-box">
+<!-- //using sinmple form -->
+Search the customer: 
+<form action="search" method="get">
+
+<input type="text" id="searchString" name="searchString">
+<input type="submit" value="search">
+</form>
+
+</div>
+<br>
+<br>
 <div id="cusotomer-tables">
 	<input type="button" value="Add Customer"
 				   onclick="window.location.href='showFormForAdd'; return false;"

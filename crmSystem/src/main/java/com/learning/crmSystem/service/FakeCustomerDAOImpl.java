@@ -39,4 +39,10 @@ public class FakeCustomerDAOImpl implements CRMCustomerDAO{
 		
 	}
 
+	@Override
+	public List<CRMCustomer> searchCustomer(String customerSearchString) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

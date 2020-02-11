@@ -16,4 +16,6 @@ public interface CRMCustomerDAO {
 	public void updateCustomer(CRMCustomer customer);
 	
 	public void deleteCustomer(Integer id);
+	
+	public List<CRMCustomer> searchCustomer(String customerSearchString);
 }

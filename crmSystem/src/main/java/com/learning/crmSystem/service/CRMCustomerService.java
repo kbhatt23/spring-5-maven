@@ -11,4 +11,5 @@ public interface CRMCustomerService{
 	public void saveCustomer(CRMCustomer customer);
 	public void updateCustomer(CRMCustomer customer);
 	public void deleteCustomer(Integer id);
+	public List<CRMCustomer> searchCustomer(String customerSearchString);
 }
