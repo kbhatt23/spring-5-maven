@@ -14,3 +14,10 @@ This introduces single responsibility priniciple and hence adds reusability of c
 
 Also it is better to keep transactions in service layer and remove that from dao.
 Meaning dao class shud use transaction from service layer context. 
+
+The spring mvc model attribute gets completely overriden by form submission data.
+So in case we are setting something in presenter get mapping to model attribute
+and then the fields that are not present in form gets removed to default java values.
+
+This can be manged by setting hidden field path for property .
+On load path calls getter function and on form submit it calls setter function to model attribute

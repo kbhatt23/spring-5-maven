@@ -27,4 +27,10 @@ public class FakeCustomerDAOImpl implements CRMCustomerDAO{
 		
 	}
 
+	@Override
+	public void updateCustomer(CRMCustomer customer) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

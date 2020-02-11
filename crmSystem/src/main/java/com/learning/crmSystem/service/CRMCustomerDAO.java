@@ -12,4 +12,6 @@ public interface CRMCustomerDAO {
 	public CRMCustomer fetchCustomer(Integer id);
 	
 	public void saveCustomer(CRMCustomer customer);
+	
+	public void updateCustomer(CRMCustomer customer);
 }

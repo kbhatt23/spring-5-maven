@@ -21,15 +21,16 @@ jai shree ram from customer list
 					<th>First Name</th>
 					<th>Last Name</th>
 					<th>Email</th>
+					<th>Update Customer</th>
 				</tr>
 				
 				<!-- loop over and print our customers -->
 				<c:forEach var="tempCustomer" items="${customerList}">
-				
 					<tr>
 						<td> ${tempCustomer.firstName} </td>
 						<td> ${tempCustomer.lastName} </td>
 						<td> ${tempCustomer.email} </td>
+						<td><a href="showUpdateCustomer?customerId=${tempCustomer.id}">Click here to update customer</a></td>
 					</tr>
 				
 				</c:forEach>

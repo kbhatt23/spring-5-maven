@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.learning.crmSystem.entity.CRMCustomer;
 import com.learning.crmSystem.service.CRMCustomerService;
@@ -39,6 +40,28 @@ public class CustomerController {
 		theModel.addAttribute("customerList", theCustomers);
 		
 		return "show-customers";
+	}
+	
+	@GetMapping("/showUpdateCustomer")
+	public String showUpdateCustomer( @RequestParam("customerId") Integer customerId,Model theModel) {
+		
+		CRMCustomer customer =  customerService.fetchCustomer(customerId);
+		System.out.println("update se phle jai shree ram "+customer);
+		theModel.addAttribute("customerAttribute", customer);
+		return "show-update-customer";
+	}
+	
+	@PostMapping("/updateCustomer")
+	public String updateCustomer(@ModelAttribute("customerAttribute") CRMCustomer customer ) {
+		System.out.println("jai shree ram from update cusomer "+customer);
+		
+		//call code to update the customer
+		
+		
+		//instead of jsp call the url directly
+				//we are using this so that we need not to populate the model again
+				//this handles internally in the get mapping added here
+		return "redirect:/customer/list";
 	}
 	
 	@GetMapping("/showFormForAdd")

@@ -42,5 +42,12 @@ public class CRMCustomerDAOImpl implements CRMCustomerDAO{
 		session.save(customer);
 	}
 
+	@Override
+	public void updateCustomer(CRMCustomer customer) {
+		Session session = sessionFactory.getCurrentSession();
+		System.out.println("calling update customer using transaction with session "+session);
+		session.save(customer);
+	}
+
 	
 }
