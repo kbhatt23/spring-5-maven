@@ -1,0 +1,11 @@
+
+
+comparison between data jpa and hibernate
+
+hibernate											data jpa
+sessionfactory								persistence Context
+session										entitymanager
+session.save                                 entitymnanager.persiste
+session.saveOrupdate                          entitymnanager.persist
+session.delete								entitymnanager.remove
+session.get										entitymnanager.find

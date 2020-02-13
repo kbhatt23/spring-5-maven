@@ -21,6 +21,7 @@ public class EmployeeHibernateDAOImpl implements EmployeeDAO{
 	//constructor dependecny
 	@Autowired
 	public EmployeeHibernateDAOImpl(EntityManager entityManager) {
+		System.out.println("jai shree ram from hibernate style");
 		this.entityManager = entityManager;
 	}
 
@@ -28,7 +29,7 @@ public class EmployeeHibernateDAOImpl implements EmployeeDAO{
 	//no need of starting session transcation and commit
 	@Transactional
 	public List<Employee> findAll() {
-	
+		System.out.println("jai shree ram from hibernate style");
 		Session session = entityManager.unwrap(Session.class);
 		Query<Employee> queryAll = session.createQuery("from Employee", Employee.class);
 		return queryAll.getResultList();
@@ -37,6 +38,7 @@ public class EmployeeHibernateDAOImpl implements EmployeeDAO{
 	@Override
 	@Transactional
 	public Employee findById(Integer id) {
+		System.out.println("jai shree ram from hibernate style");
 		Session session = entityManager.unwrap(Session.class);
 		return session.get(Employee.class, id);
 	}
@@ -44,6 +46,7 @@ public class EmployeeHibernateDAOImpl implements EmployeeDAO{
 	@Override
 	@Transactional
 	public void save(Employee employee) {
+		System.out.println("jai shree ram from hibernate style");
 		Session session = entityManager.unwrap(Session.class);
 		session.save(employee);
 	}
@@ -51,6 +54,7 @@ public class EmployeeHibernateDAOImpl implements EmployeeDAO{
 	@Override
 	@Transactional
 	public void update(Employee employee) {
+		System.out.println("jai shree ram from hibernate style");
 		Session session = entityManager.unwrap(Session.class);
 		session.saveOrUpdate(employee);
 	}
@@ -58,6 +62,7 @@ public class EmployeeHibernateDAOImpl implements EmployeeDAO{
 	@Override
 	@Transactional
 	public void delete(Integer id) {
+		System.out.println("jai shree ram from hibernate style");
 		Session session = entityManager.unwrap(Session.class);
 		session.delete(session.get(Employee.class, id));
 		
