@@ -1,4 +1,15 @@
+Spring boot auto configures beans needed for jap and hibernate :
+for example data source , localSessionfactoryBean or LocalEntityManagerBean if we add spring data pa
 
+All auto config depends on depenncies.
+JPA is just specification like interfaces , actual implementation needs a vendor like hibernate or eclipse link etc.
+Defaullt is hibernate for spring boot.
+
+Spring boot configures beans of type loclaentitymanagerfactorybean class and data soruce.
+the properties can be configured in application.proeprties
+
+benefits of jpa:
+it will make coding flexible ,  we can change vendor anytime with very less coding
 
 comparison between data jpa and hibernate
 
@@ -9,3 +20,22 @@ session.save                                 entitymnanager.persiste
 session.saveOrupdate                          entitymnanager.persist
 session.delete								entitymnanager.remove
 session.get										entitymnanager.find
+
+benefits of sprnig data jpa Repostiory :
+removes boiler plate code
+provide transactions so no need to manually add transaction until there is need
+
+Spring data rest:
+This project reduces need of controller
+We just need to define entity and jparepostiroy interface, and all the endpoints will get exposed
+Name of endpoint will be entity name -> with first characters in lowercase and ends with "s" character.
+EG : Employee entity becomes employees
+spring data rest picks all classes with @repository than extends JPARepository and takes enities
+ from it and exposes endpoints
+ 
+ sorting url :
+ http://localhost:8081/magic-api/employees?sort=employeeFirstName,desc
+ 
+ we can choose page and size in the url:
+ //starts with 0
+ http://localhost:8081/magic-api/employees?page=0&size=3
