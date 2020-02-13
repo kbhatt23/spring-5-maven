@@ -1,0 +1,43 @@
+User to be created using root/Suarez@23
+
+USer : employeeAdmin
+pass : Suarez@23
+a. CREATE USER 'employeeAdmin'@'localhost' IDENTIFIED BY 'Suarez@23';
+
+b. GRANT ALL PRIVILEGES ON *.* TO 'employeeAdmin'@'localhost';
+
+c. \connect employeeAdmin@localhost:3306
+
+d. CREATE DATABASE  IF NOT EXISTS `employee_system_schema`;
+e. use employee_system_schema;
+
+f.CREATE TABLE `employee` (
+  `employee_id` int NOT NULL AUTO_INCREMENT,
+  `employee_first_name` varchar(45) DEFAULT NULL,
+  `employee_last_name` varchar(45) DEFAULT NULL,
+  `employee_email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+g.   INSERT INTO employee (employee_first_name, employee_last_name, employee_email)
+VALUES ('radha', 'krishna', 'radha.krishna@god.com');
+
+INSERT INTO employee (employee_first_name, employee_last_name, employee_email)
+VALUES ('radha', 'krishna', 'radha.krishna@god.com');
+
+INSERT INTO employee (employee_first_name, employee_last_name, employee_email)
+VALUES ('sita', 'ram', 'sita.ram@god.com');
+
+INSERT INTO crm_customer (crm_customer_first_name, crm_customer_last_name, crm_customer_email)
+VALUES ('pavanputra', 'hanuman', 'pavanputra.hanuman@god.com');
+
+INSERT INTO crm_customer (crm_customer_first_name, crm_customer_last_name, crm_customer_email)
+VALUES ('uma', 'maheshwar', 'uma.maheshwar@god.com');
+
+INSERT INTO crm_customer (crm_customer_first_name, crm_customer_last_name, crm_customer_email)
+VALUES ('parampita', 'brahma', 'parampita.brahma@god.com');
+
+INSERT INTO crm_customer (crm_customer_first_name, crm_customer_last_name, crm_customer_email)
+VALUES ('ramda', 'kanishk', 'ramdas.kanishk@ramdas.com');
+
+
