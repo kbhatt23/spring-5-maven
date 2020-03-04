@@ -1,0 +1,18 @@
+Bcrypt algo is one way exncryption
+It do not require decryption
+We can store bcryupted passwords in DB using below syntaxt
+{bcrypt}hashedpassword-----
+instead of
+{noop}Suyarez@23
+
+The size of bcrypt key is always 60 so we need to increase the size
+to 68 {bcrypt} size is 8 and 60 for hashed password
+
+Steps in validation
+a. Passwords are stored using Bcrypted key
+b. User enters normal password
+c. Spring takes normal password entered and encrypt it(as bcrypt can not be decrypted)
+d . encrypted above is compared with already stoed encrupted password in DB
+
+to encrypt using bcrypt algo
+https://www.bcryptcalculator.com/

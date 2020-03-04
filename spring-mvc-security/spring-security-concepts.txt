@@ -48,3 +48,21 @@ We can disable CSRF if the application is non web browser , like rest ,  as in a
 send the call from user application ->  he can access browser to hack only one applciation
 
 in normal fomr we need to manually add the csrf token for each post request, form:form tag do it by its own.
+
+
+We can also JDBC based data store -> we can store the users and authorities in OOB pre defined table
+Table schemas are as follows:
+user -> username , password and enabled  : password is set in specific format
+
+password format : {encrypotion-type}passwordEncrypted   eg-> {noop}plainTextPAssword
+														    {bcrypt}encryptedpassword
+authorities -> username, authority
+
+Basic code steps  to handle ethis :
+a. Create SQL for users and authorities tables and insert data in it .
+b. insert data in both the tables
+c. add maven dependcies for spring security jdbc , mysql connector, connection pools etc
+d. create spring configuration for data soruce using jdbc properties
+. modify spring security config to use data store instead of in memory data base
+
+
